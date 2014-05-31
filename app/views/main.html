@@ -1,0 +1,56 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+  </ul>
+  <h3 class="text-muted">NCAA Rankings</h3>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="teamName">Search by Team Name</label>
+                <input type="text" class="form-control" id="teamName" ng-model="search.name">
+            </div>
+            <div class="col-lg-2">
+                <label for="conference">Conference</label>
+                <select class="form-control" ng-model="filterTeam.conference" id="conference"
+                        ng-options="conference.name for conference in filterOptions.conferences">
+                </select>
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-2">
+                <label for="sortBy">Sort by:</label>
+                <select class="form-control" id="sortBy" ng-model="orderProp"
+                        ng-init="orderProp = orderProp || sortOptions[0].value"
+                        ng-options="option.value as option.name for option in sortOptions">
+                </select>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>Team</th>
+            <th>Conference</th>
+            <th>Record</th>
+            <th>RPI</th>
+            <th>BPI</th>
+            <th>KPom</th>
+            <th>BM Avg</th>
+        </tr>
+        <tr ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:orderProp">
+            <td>{{team.name}}</td>
+            <td>{{team.conference}}</td>
+            <td>{{team.record}}</td>
+            <td>{{team.rpi}}</td>
+            <td>{{team.bpi}}</td>
+            <td>{{team.kpom}}</td>
+            <td>{{team.bm_avgseed}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer">
+  <p>Alex Voerman</p>
+</div>
