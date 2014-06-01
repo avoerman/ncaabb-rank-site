@@ -71,3 +71,28 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Rankings grid */
+.header-row-upper th {
+    height: 8px;
+}
+
+.table > tbody > tr.header-row-upper > th {
+    background-color: #ccc;
+    padding: 0px;
+}
+
+.table > tbody > tr.header-row-lower > th {
+    background-color: #ccc;
+    border-bottom: 1px solid #999;
+    padding-bottom: 4px;
+}
+
+.panel-default > .panel-heading.rankings-grid-header {
+    background-color: #428bca;
+    color: #fff;
+}
+
+.rankings-grid .table-striped .data-row:hover td {
+   background-color: #E0EBF4;
+}
