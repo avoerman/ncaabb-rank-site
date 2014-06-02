@@ -50,8 +50,8 @@
                 <th># Brackets</th>
             </tr>
             <tr class="data-row" ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:orderProp">
-                <td>{{team.name}}</td>
-                <td>{{team.conference}}</td>
+                <td class="team-name">{{team.name}}</td>
+                <td class="conference">{{team.conference}}</td>
                 <td>{{team.record}}</td>
                 <td>{{team.rpi}}</td>
                 <td>{{team.bpi}}</td>

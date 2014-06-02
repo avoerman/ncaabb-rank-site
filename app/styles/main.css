@@ -96,3 +96,7 @@ body {
 .rankings-grid .table-striped .data-row:hover td {
    background-color: #E0EBF4;
 }
+
+.rankings-grid .team-name {
+    width: 180px;
+}
