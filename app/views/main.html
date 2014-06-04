@@ -49,8 +49,14 @@
                 <th>Avg</th>
                 <th># Brackets</th>
             </tr>
-            <tr class="data-row" ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:orderProp">
-                <td class="team-name">{{team.name}}</td>
+            <tr class="data-row {{highlightedRow(team)}}" ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:orderProp"
+                ng-mouseover="rowOver(team, true)"
+                ng-mouseleave="rowOver(team, false)"
+                ng-click="clickedHeart(team)">
+                <td class="team-name">{{team.name}}
+                    <span class="glyphicon {{getHeart(team)}}" style="display:{{displayIcon(team)}};">
+                    </span>
+                </td>
                 <td class="conference">{{team.conference}}</td>
                 <td>{{team.record}}</td>
                 <td>{{team.rpi}}</td>
