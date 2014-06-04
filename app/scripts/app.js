@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('ncaaRankSiteApp', [
+    .module('ncaabbRankSiteApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',

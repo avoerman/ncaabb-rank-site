@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ncaaRankSiteApp')
+angular.module('ncaabbRankSiteApp')
     .controller('MainCtrl', function($scope, $http) {
         $scope.sortOptions = [{
             name: 'RPI',
