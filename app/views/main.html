@@ -19,14 +19,7 @@
                         ng-options="conference.name for conference in filterOptions.conferences">
                 </select>
             </div>
-            <div class="col-lg-4"></div>
-            <div class="col-lg-2">
-                <label for="sortBy">Sort by:</label>
-                <select class="form-control" id="sortBy" ng-model="orderProp"
-                        ng-init="orderProp = orderProp || sortOptions[0].value"
-                        ng-options="option.value as option.name for option in sortOptions">
-                </select>
-            </div>
+            <div class="col-lg-6"></div>
         </div>
     </div>
     <div class="rankings-grid">
@@ -39,17 +32,15 @@
                 <th colspan="3">Bracket Matrix</th>
             </tr>
             <tr class="header-row-lower">
-                <th>Team</th>
-                <th>Conference</th>
-                <th>Record</th>
-                <th>RPI</th>
-                <th>BPI</th>
-                <th>KPom</th>
-                <th>Seed</th>
-                <th>Avg</th>
-                <th># Brackets</th>
+                <th ng-repeat="header in headers" class="header"
+                    ng-mouseenter="header.hovered = true;"
+                    ng-mouseleave="header.hovered = false;"
+                    ng-click="onSortArrowClick(header);">
+                    {{header.title}}
+                    <span class="" ng-class="getArrowClasses(header)"></span>
+                </th>
             </tr>
-            <tr class="data-row {{highlightedRow(team)}}" ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:orderProp"
+            <tr class="data-row {{highlightedRow(team)}}" ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:sortValue:sortDirection"
                 ng-mouseover="rowOver(team, true)"
                 ng-mouseleave="rowOver(team, false)"
                 ng-click="clickedHeart(team)">
