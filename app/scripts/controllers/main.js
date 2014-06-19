@@ -66,12 +66,17 @@ angular.module('ncaabbRankSiteApp')
                 }
             });
 
-            if (header.activeSortArrowDesc) {
-                header.activeSortArrowDesc = false;
-                header.activeSortArrowAsc = true;
+            if (header.activeSortArrowDesc || header.activeSortArrowAsc) {
+                header.activeSortArrowDesc = !header.activeSortArrowDesc;
+                header.activeSortArrowAsc = !header.activeSortArrowAsc;
             } else {
-                header.activeSortArrowDesc = true;
-                header.activeSortArrowAsc = false;
+                if (header.reverseSortByDefault) {
+                    header.activeSortArrowDesc = false;
+                    header.activeSortArrowAsc = true;
+                } else {
+                    header.activeSortArrowDesc = true;
+                    header.activeSortArrowAsc = false;
+                }
             }
 
             header.lightarrow = false;
@@ -190,7 +195,8 @@ angular.module('ncaabbRankSiteApp')
                 value: 'bm_avgseed'
             }, {
                 title: '# Brackets',
-                value: 'bm_numbrackets'
+                value: 'bm_numbrackets',
+                reverseSortByDefault: true
             }];
         }
     });
