@@ -40,7 +40,8 @@
                     <span class="" ng-class="getArrowClasses(header)"></span>
                 </th>
             </tr>
-            <tr class="data-row {{highlightedRow(team)}}" ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:sortValue:sortDirection"
+            <tr class="data-row {{highlightedRow(team)}}"
+                ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:sortValue:sortDirection | nullsLast:sortValue"
                 ng-mouseover="rowOver(team, true)"
                 ng-mouseleave="rowOver(team, false)"
                 ng-click="clickedHeart(team)">
