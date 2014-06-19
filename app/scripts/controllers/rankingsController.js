@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ncaabbRankSiteApp')
-    .controller('MainCtrl', function($scope, $http) {
+    .controller('rankingsController', function($scope, $http) {
 
         $scope.conferences = [];
 

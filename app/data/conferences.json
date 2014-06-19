@@ -1,69 +1,103 @@
 [{
+    "longName": "All",
     "name": "All"
 }, {
+    "longName": "Atlantic 10",
     "name": "A10"
 }, {
+    "longName": "Atlantic Coast Conference",
     "name": "ACC"
 }, {
+    "longName": "American East",
     "name": "AE"
 }, {
+    "longName": "American",
     "name": "Amer"
 }, {
+    "longName": "Atlantic Sun",
     "name": "ASun"
 }, {
+    "longName": "Big 10",
     "name": "B10"
 }, {
+    "longName": "Big 12",
     "name": "B12"
 }, {
+    "longName": "Big East",
     "name": "BE"
 }, {
+    "longName": "Big Sky",
     "name": "BSky"
 }, {
+    "longName": "Big South",
     "name": "BSth"
 }, {
+    "longName": "Big West",
     "name": "BW"
 }, {
+    "longName": "Colonial Athletic Association",
     "name": "CAA"
 }, {
+    "longName": "Conference USA",
     "name": "CUSA"
 }, {
+    "longName": "Horizon League",
     "name": "Horz"
 }, {
+    "longName": "Independents",
     "name": "ind"
 }, {
+    "longName": "Ivy League",
     "name": "Ivy"
 }, {
+    "longName": "Metro Atlantic Athletic Conference",
     "name": "MAAC"
 }, {
+    "longName": "Mid-American Conference",
     "name": "MAC"
 }, {
+    "longName": "Mid Eastern Athletic Conference",
     "name": "MEAC"
 }, {
+    "longName": "Missouri Valley Conference",
     "name": "MVC"
 }, {
+    "longName": "Mountain West Conference",
     "name": "MWC"
 }, {
+    "longName": "Northeast Conference",
     "name": "NEC"
 }, {
+    "longName": "Ohio Valley Conference",
     "name": "OVC"
 }, {
+    "longName": "Pacific 12",
     "name": "P12"
 }, {
+    "longName": "Patriot League",
     "name": "Pat"
 }, {
+    "longName": "Sun Belt",
     "name": "SB"
 }, {
+    "longName": "Southern Conference",
     "name": "SC"
 }, {
+    "longName": "South Eastern Conference",
     "name": "SEC"
 }, {
+    "longName": "Southland Conference",
     "name": "Slnd"
 }, {
+    "longName": "Summit League",
     "name": "Sum"
 }, {
+    "longName": "Southwestern Athletic Conference",
     "name": "SWAC"
 }, {
+    "longName": "Western Athletic Conference",
     "name": "WAC"
 }, {
+    "longName": "West Coast Conference",
     "name": "WCC"
 }]

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('ncaabbRankSiteApp')
-    .controller('AboutCtrl', function($scope) {
+    .controller('aboutController', function($scope) {
 
     });
