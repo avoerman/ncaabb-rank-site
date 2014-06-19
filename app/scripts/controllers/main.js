@@ -2,19 +2,22 @@
 
 angular.module('ncaabbRankSiteApp')
     .controller('MainCtrl', function($scope, $http) {
-        $scope.filterOptions = {
-            conferences: getConferences()
-        };
+
+        $scope.conferences = [];
+
+        $http.get('data/conferences.json').success(function(data) {
+            $scope.conferences = data;
+
+            $scope.filterTeam = {
+                conference: data[0]
+            };
+        });
 
         $scope.headers = getHeaders();
 
         $http.get('data/rankings/alldata.json').success(function(data) {
             $scope.teams = data;
         });
-
-        $scope.filterTeam = {
-            conference: $scope.filterOptions.conferences[0]
-        };
 
         $scope.conferenceFilter = function(team) {
             if (team.conference === $scope.filterTeam.conference.name) {
@@ -96,78 +99,6 @@ angular.module('ncaabbRankSiteApp')
             };
         };
 
-        function getConferences() {
-            return [{
-                name: 'All'
-            }, {
-                name: 'A10'
-            }, {
-                name: 'ACC'
-            }, {
-                name: 'AE'
-            }, {
-                name: 'Amer'
-            }, {
-                name: 'ASun'
-            }, {
-                name: 'B10'
-            }, {
-                name: 'B12'
-            }, {
-                name: 'BE'
-            }, {
-                name: 'BSky'
-            }, {
-                name: 'BSth'
-            }, {
-                name: 'BW'
-            }, {
-                name: 'CAA'
-            }, {
-                name: 'CUSA'
-            }, {
-                name: 'Horz'
-            }, {
-                name: 'ind'
-            }, {
-                name: 'Ivy'
-            }, {
-                name: 'MAAC'
-            }, {
-                name: 'MAC'
-            }, {
-                name: 'MEAC'
-            }, {
-                name: 'MVC'
-            }, {
-                name: 'MWC'
-            }, {
-                name: 'NEC'
-            }, {
-                name: 'OVC'
-            }, {
-                name: 'P12'
-            }, {
-                name: 'Pat'
-            }, {
-                name: 'SB'
-            }, {
-                name: 'SC'
-            }, {
-                name: 'SEC'
-            }, {
-                name: 'Slnd'
-            }, {
-                name: 'Sum'
-            }, {
-                name: 'SWAC'
-            }, {
-                name: 'WAC'
-            }, {
-                name: 'WCC'
-            }];
-        }
-
         function getHeaders() {
             return [{
                 title: 'Team',
@@ -202,12 +133,14 @@ angular.module('ncaabbRankSiteApp')
     })
     .filter('nullsLast', function() {
         return function(array, key) {
-            if (!angular.isArray(array)) return;
+            if (!angular.isArray(array)) {
+                return;
+            }
             var present = array.filter(function(item) {
                 return item[key];
             });
             var empty = array.filter(function(item) {
-                return !item[key]
+                return !item[key];
             });
             return present.concat(empty);
         };
