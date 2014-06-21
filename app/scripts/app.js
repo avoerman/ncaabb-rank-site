@@ -17,6 +17,10 @@ angular
                 templateUrl: 'views/about.html',
                 controller: 'aboutController'
             })
+            .when('/teams/:name', {
+                templateUrl: 'views/team.html',
+                controller: 'teamController'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -45,7 +45,7 @@
                 ng-mouseover="rowOver(team, true)"
                 ng-mouseleave="rowOver(team, false)"
                 ng-click="clickedHeart(team)">
-                <td class="team-name">{{team.name}}
+                <td class="team-name"><a href="#/teams/{{team.name}}">{{team.name}}</a>
                     <span class="glyphicon {{getHeart(team)}}" style="display:{{displayIcon(team)}};">
                     </span>
                 </td>

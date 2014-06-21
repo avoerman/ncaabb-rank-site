@@ -3,6 +3,10 @@
 angular.module('ncaabbRankSiteApp')
     .controller('rankingsController', function($scope, $http) {
 
+        $http.get('data/rankings/alldata.json').success(function(data) {
+            $scope.teams = data;
+        });
+
         $scope.conferences = [];
 
         $http.get('data/conferences.json').success(function(data) {
@@ -14,10 +18,6 @@ angular.module('ncaabbRankSiteApp')
         });
 
         $scope.headers = getHeaders();
-
-        $http.get('data/rankings/alldata.json').success(function(data) {
-            $scope.teams = data;
-        });
 
         $scope.conferenceFilter = function(team) {
             if (team.conference === $scope.filterTeam.conference.name) {
