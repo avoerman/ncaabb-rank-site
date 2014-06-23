@@ -20,7 +20,7 @@ angular.module('ncaabbRankSiteApp')
         $scope.headers = getHeaders();
 
         $scope.conferenceFilter = function(team) {
-            if (team.conference === $scope.filterTeam.conference.name) {
+            if (!$scope.filterTeam || team.conference === $scope.filterTeam.conference.name) {
                 return true;
             } else if ($scope.filterTeam.conference.name === 'All') {
                 return true;
