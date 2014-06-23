@@ -6,6 +6,23 @@
     <div class="panel-heading">Team Info</div>
     <div class="panel-body">
         <p>Record: {{team.record}}</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Rankings</div>
+    <div class="panel-body">
         <p>RPI: {{team.rpi}}</p>
+        <p>ESPN's BPI: {{team.bpi}}</p>
+        <p>Ken Pomeroy: {{team.kpom}}</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Brackets</div>
+    <div class="panel-body">
+        <p ng-show="team.bm_seed">Bracket Matrix Seed: {{team.bm_seed}}</p>
+        <p ng-show="team.bm_avgseed">Bracket Matrix Average Seed: {{team.bm_avgseed}}</p>
+        <p>Bracket Matrix Number of Brackets: {{team.bm_numbrackets ? team.bm_numbrackets : 0}} of 121 ({{getBMPercentBrackets(team.bm_numbrackets)}})</p>
     </div>
 </div>

@@ -12,4 +12,11 @@ angular.module('ncaabbRankSiteApp')
             $scope.team = teams[0];
         });
 
+        $scope.getBMPercentBrackets = function(totalBrackets) {
+            var percentage = 0;
+            if (totalBrackets > 0) {
+                percentage = parseFloat((totalBrackets / 121) * 100).toFixed(2).replace(/\.?0+$/, "");
+            }
+            return percentage + '%';
+        };
     });
