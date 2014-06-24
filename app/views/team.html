@@ -32,3 +32,19 @@
         </div>
     </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Schedule</div>
+    <table class="table table-striped">
+        <tr>
+            <th>Date</th>
+            <th>Opponent</th>
+            <th>Outcome</th>
+        </tr>
+        <tr ng-repeat="contest in contests">
+            <td>{{contest.date}}</td>
+            <td>{{contest.opponent}}</td>
+            <td>{{contest.outcome}}</td>
+        </tr>
+    </table>
+</div>

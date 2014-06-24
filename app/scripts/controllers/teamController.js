@@ -12,6 +12,14 @@ angular.module('ncaabbRankSiteApp')
             $scope.team = teams[0];
         });
 
+        $http.get('data/schedules/scheduledata.json').success(function(data) {
+            var scheduleTeams = data.filter(function(fteam) {
+                return fteam.name === $routeParams.name;;
+            });
+
+            $scope.contests = scheduleTeams[0].schedule;
+        });
+
         $scope.getBMPercentBrackets = function(totalBrackets) {
             var percentage = 0;
             if (totalBrackets > 0) {
