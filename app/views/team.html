@@ -40,13 +40,15 @@
             <th>Date</th>
             <th>Opponent</th>
             <th>Conference</th>
+            <th>RPI</th>
             <th>Location</th>
             <th>Outcome</th>
         </tr>
         <tr ng-repeat="contest in contests" class="{{shadeByOutcomeClass(contest.outcome)}}">
             <td>{{contest.date}}</td>
-            <td>{{contest.opponent}}</td>
+            <td><a href="#/teams/{{contest.opponent}}">{{contest.opponent}}</a></td>
             <td>{{contest.conference}}</td>
+            <td>{{contest.rpi}}</td>
             <td>{{contest.location}}</td>
             <td>{{contest.score}} {{contest.outcome}}</td>
         </tr>
