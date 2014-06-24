@@ -27,4 +27,16 @@ angular.module('ncaabbRankSiteApp')
             }
             return percentage + '%';
         };
+
+        $scope.shadeByOutcomeClass = function(outcome) {
+            switch (outcome) {
+                case 'W':
+                    return 'highlight-win';
+                case 'L':
+                    return 'highlight-loss';
+                default:
+                    return '';
+            }
+
+        };
     });

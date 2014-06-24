@@ -35,16 +35,20 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">Schedule</div>
-    <table class="table table-striped">
+    <table class="table schedule-table">
         <tr>
             <th>Date</th>
             <th>Opponent</th>
+            <th>Conference</th>
+            <th>Location</th>
             <th>Outcome</th>
         </tr>
-        <tr ng-repeat="contest in contests">
+        <tr ng-repeat="contest in contests" class="{{shadeByOutcomeClass(contest.outcome)}}">
             <td>{{contest.date}}</td>
             <td>{{contest.opponent}}</td>
-            <td>{{contest.outcome}}</td>
+            <td>{{contest.conference}}</td>
+            <td>{{contest.location}}</td>
+            <td>{{contest.score}} {{contest.outcome}}</td>
         </tr>
     </table>
 </div>
