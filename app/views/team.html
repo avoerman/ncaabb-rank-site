@@ -1,4 +1,8 @@
-<div class="page-header">
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a ng-href="#">Rankings</a></li>
+        <li><a ng-href="#/about">About</a></li>
+    </ul>
     <h1>{{team.name}} <small>{{team.conference}}</small></h1>
 </div>
 
@@ -43,6 +47,7 @@
             <th>RPI</th>
             <th>Location</th>
             <th>Outcome</th>
+            <th>Quality</th>
         </tr>
         <tr ng-repeat="contest in contests" class="{{shadeByOutcomeClass(contest.outcome)}}">
             <td>{{contest.date}}</td>
@@ -51,6 +56,7 @@
             <td>{{contest.rpi}}</td>
             <td>{{contest.location}}</td>
             <td>{{contest.score}} {{contest.outcome}}</td>
+            <td>{{getQuality(contest)}}</td>
         </tr>
     </table>
 </div>
