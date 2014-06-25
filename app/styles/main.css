@@ -102,10 +102,6 @@ body {
     width: 180px;
 }
 
-.table > tbody > tr.highlight > td {
-    background-color: #E0EBF4;
-}
-
 .hovarrow {
     display: inline-block;
     width: 0;

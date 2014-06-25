@@ -40,15 +40,9 @@
                     <span class="" ng-class="getArrowClasses(header)"></span>
                 </th>
             </tr>
-            <tr class="data-row {{highlightedRow(team)}}"
-                ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:sortValue:sortDirection | nullsLast:sortValue"
-                ng-mouseover="rowOver(team, true)"
-                ng-mouseleave="rowOver(team, false)"
-                ng-click="clickedHeart(team)">
-                <td class="team-name"><a href="#/teams/{{team.name}}">{{team.name}}</a>
-                    <span class="glyphicon {{getHeart(team)}}" style="display:{{displayIcon(team)}};">
-                    </span>
-                </td>
+            <tr class="data-row"
+                ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:sortValue:sortDirection | nullsLast:sortValue">
+                <td class="team-name"><a href="#/teams/{{team.name}}">{{team.name}}</a></td>
                 <td class="conference">{{team.conference}}</td>
                 <td>{{team.record}}</td>
                 <td>{{team.rpi}}</td>

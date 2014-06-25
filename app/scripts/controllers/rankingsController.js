@@ -29,34 +29,6 @@ angular.module('ncaabbRankSiteApp')
             }
         };
 
-        $scope.rowOver = function(team, useIcon) {
-            if (!team.faved) {
-                team.useIcon = useIcon;
-            }
-        };
-
-        $scope.displayIcon = function(team) {
-            if (!team.useIcon) {
-                return 'none';
-            }
-        };
-
-        $scope.clickedHeart = function(team) {
-            team.faved = !team.faved;
-        };
-
-        $scope.getHeart = function(team) {
-            return team.faved ? 'glyphicon-heart' : 'glyphicon-heart-empty';
-        };
-
-        $scope.highlightedRow = function(team) {
-            return team.faved ? 'highlight' : '';
-        };
-
-        $scope.sortByTeam = function() {
-            $scope.teamArrowClass = 'sort-arrow-down';
-        };
-
         /**
          * Handler when the sort arrows are clicked. Removes all blue arrows first.
          */
