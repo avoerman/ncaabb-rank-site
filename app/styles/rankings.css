@@ -1,0 +1,69 @@
+/* Rankings grid */
+.header-row-upper th {
+    height: 8px;
+}
+
+.table > tbody > tr.header-row-upper > th {
+    background-color: #ccc;
+    padding: 0px;
+}
+
+.table > tbody > tr.header-row-lower > th {
+    background-color: #ccc;
+    border-bottom: 1px solid #999;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+
+.panel-default > .panel-heading.rankings-grid-header {
+    background-color: #428bca;
+    color: #fff;
+}
+
+.rankings-grid .table-striped .data-row:hover td {
+   background-color: #E0EBF4;
+}
+
+.rankings-grid .team-name {
+    width: 180px;
+}
+
+.hovarrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #777;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    vertical-align: middle;
+}
+
+.lightarrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #bbb;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    vertical-align: middle;
+}
+
+.activearrowDesc {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #428bca;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    vertical-align: middle;
+}
+
+.activearrowAsc {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid #428bca;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    vertical-align: middle;
+}

@@ -1,0 +1,9 @@
+.schedule-table > tbody:first-child > tr.highlight-win > td {
+    background-color: #e0f4e9;
+    border-top: 1px solid #a8e0c1;
+}
+
+.schedule-table > tbody:first-child > tr.highlight-loss > td {
+    background-color: #f4e0eb;
+    border-top: 1px solid #e7bad3;
+}
