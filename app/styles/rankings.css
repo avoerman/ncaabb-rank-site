@@ -25,7 +25,15 @@
 }
 
 .rankings-grid .team-name {
-    width: 180px;
+    min-width: 180px;
+}
+
+.rankings-grid .conference {
+    min-width: 110px;
+}
+
+.rankings-grid .record {
+    min-width: 75px;
 }
 
 .hovarrow {

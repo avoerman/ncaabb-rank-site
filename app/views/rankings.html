@@ -44,7 +44,7 @@
                 ng-repeat="team in teams | filter:search | filter:conferenceFilter | orderBy:sortValue:sortDirection | nullsLast:sortValue">
                 <td class="team-name"><a href="#/teams/{{team.name}}">{{team.name}}</a></td>
                 <td class="conference">{{team.conference}}</td>
-                <td>{{team.record}}</td>
+                <td class="record">{{team.record}}</td>
                 <td>{{team.rpi}}</td>
                 <td>{{team.bpi}}</td>
                 <td>{{team.kpom}}</td>
