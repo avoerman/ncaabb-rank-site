@@ -40,35 +40,4 @@ angular.module('ncaabbRankSiteApp')
 
         };
 
-        $scope.getQuality = function(contest) {
-            if (contest.outcome === 'W') {
-                if (contest.rpi <= 50) {
-                    if (contest.location === 'A') {
-                        return 'TOP50 ROAD';
-                    } else {
-                        return 'TOP50';
-                    }
-                } else if (contest.rpi <= 100 && contest.rpi > 50) {
-                    if (contest.location === 'A') {
-                        return 'TOP100 ROAD';
-                    } else {
-                        return 'TOP100';
-                    }
-                }
-            } else {
-                if (contest.rpi >= 300) {
-                    if (contest.location === 'H') {
-                        return '300+ HOME';
-                    } else {
-                        return '300+';
-                    }
-                } else if (contest.rpi >= 200 && contest.rpi < 300) {
-                    if (contest.location === 'H') {
-                        return '200+ HOME';
-                    } else {
-                        return '200+';
-                    }
-                }
-            }
-        };
     });

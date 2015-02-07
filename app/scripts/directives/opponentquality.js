@@ -25,7 +25,7 @@ angular.module('ncaabbRankSiteApp')
                             $scope.quality = 'TOP100';
                         }
                     }
-                } else {
+                } else if (contest.outcome === 'L') {
                     if (contest.rpi >= 300) {
                         if (contest.location === 'H') {
                             $scope.quality = '300+ HOME';
