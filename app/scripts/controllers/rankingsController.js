@@ -55,7 +55,11 @@ angular.module('ncaabbRankSiteApp')
             }
 
             header.lightarrow = false;
-            $scope.sortValue = header.value;
+            if (header.title === 'Record') {
+                $scope.sortValue = 'wins / (wins + losses)';
+            } else {
+                $scope.sortValue = header.value;
+            }
             $scope.sortDirection = (header.activeSortArrowAsc ? 'reverse' : '');
         };
 
@@ -90,6 +94,12 @@ angular.module('ncaabbRankSiteApp')
             }, {
                 title: 'KPom',
                 value: 'kpom'
+            }, {
+                title: 'AP',
+                value: 'aprank'
+            }, {
+                title: 'Coaches',
+                value: 'coachesRank'
             }, {
                 title: 'Seed',
                 value: 'bm_seed'
