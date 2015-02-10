@@ -75,3 +75,8 @@
     border-right: 5px solid transparent;
     vertical-align: middle;
 }
+
+.receivedVotes {
+    font-style: italic;
+    color: #aaa;
+}

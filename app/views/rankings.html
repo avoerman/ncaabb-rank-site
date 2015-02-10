@@ -49,8 +49,8 @@
                 <td>{{team.rpi}}</td>
                 <td>{{team.bpi}}</td>
                 <td>{{team.kpom}}</td>
-                <td>{{team.aprank}}</td>
-                <td>{{team.coachesRank}}</td>
+                <td ng-class="getPollClass(team.aprank)">{{team.aprank}}</td>
+                <td ng-class="getPollClass(team.coachesRank)">{{team.coachesRank}}</td>
                 <td>{{team.bm_seed}}</td>
                 <td>{{team.bm_avgseed}}</td>
                 <td>{{team.bm_numbrackets}}</td>

@@ -75,6 +75,12 @@ angular.module('ncaabbRankSiteApp')
             };
         };
 
+        $scope.getPollClass = function(rank) {
+            return {
+                receivedVotes: (rank > 25)
+            };
+        };
+
         function getHeaders() {
             return [{
                 title: 'Team',
