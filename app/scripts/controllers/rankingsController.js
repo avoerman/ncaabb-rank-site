@@ -98,8 +98,11 @@ angular.module('ncaabbRankSiteApp')
                 title: 'BPI',
                 value: 'bpi'
             }, {
-                title: 'KPom',
+                title: 'KPm',
                 value: 'kpom'
+            }, {
+                title: 'Mas',
+                value: 'massey'
             }, {
                 title: 'AP',
                 value: 'aprank'
