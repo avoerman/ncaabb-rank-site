@@ -21,6 +21,10 @@ angular
                 templateUrl: 'views/team.html',
                 controller: 'teamController'
             })
+            .when('/compare', {
+                templateUrl: 'views/compare.html',
+                controller: 'compareController'
+            })
             .otherwise({
                 redirectTo: '/'
             });

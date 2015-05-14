@@ -1,0 +1,13 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li ng-class="getActiveClass('/')"><a ng-href="#">Rankings</a></li>
+        <li ng-class="getActiveClass('/compare')"><a ng-href="#/compare">Compare</a></li>
+        <li ng-class="getActiveClass('/about')"><a ng-href="#/about">About</a></li>
+    </ul>
+    <div ng-if="subTitle">
+        <h1>{{title}} <small>{{subTitle}}</small></h1>
+    </div>
+    <div ng-if="!subTitle">
+        <h3 class="text-muted">{{title}}</h3>
+    </div>
+</div>

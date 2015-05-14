@@ -1,0 +1,152 @@
+<page-header></page-header>
+
+<div class="row">
+    <div class = "col-md-6">
+        <select ng-model="team" ng-options="team.name for team in teams" ng-change="compareTeamChange(team, 1)">
+            <option value="">Select Team</option>
+        </select>
+        <h2>{{team.name}}</h2>
+    </div>
+    <div class = "col-md-6">
+        <select ng-model="team2" ng-options="team.name for team in teams" ng-change="compareTeamChange(team2, 2)">
+            <option value="">Select Team</option>
+        </select>
+        <h2>{{team2.name}}</h2>
+    </div>
+</div>
+<div class="row">
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Team Info</div>
+            <div class="panel-body">
+                <p>Record: {{team.record}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Team Info</div>
+            <div class="panel-body">
+                <p>Record: {{team2.record}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Rankings</div>
+            <div class="panel-body">
+                <p>RPI: {{team.rpi}}</p>
+                <p>ESPN's BPI: {{team.bpi}}</p>
+                <p>Ken Pomeroy: {{team.kpom}}</p>
+            </div>
+        </div>
+    </div>
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Rankings</div>
+            <div class="panel-body">
+                <p>RPI: {{team2.rpi}}</p>
+                <p>ESPN's BPI: {{team2.bpi}}</p>
+                <p>Ken Pomeroy: {{team2.kpom}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Polls</div>
+            <div class="panel-body">
+                <p>AP Top 25: {{team.aprank}}</p>
+                <p>Coaches: {{team.coachesRank}}</p>
+            </div>
+        </div>
+    </div>
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Polls</div>
+            <div class="panel-body">
+                <p>AP Top 25: {{team2.aprank}}</p>
+                <p>Coaches: {{team2.coachesRank}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Brackets</div>
+            <div class="panel-body">
+                <p ng-show="team.bm_seed">Bracket Matrix Seed: {{team.bm_seed}}</p>
+                <p ng-show="team.bm_avgseed">Bracket Matrix Average Seed: {{team.bm_avgseed}}</p>
+                <p>Bracket Matrix Number of Brackets: {{team.bm_numbrackets ? team.bm_numbrackets : 0}} of 121 ({{getBMPercentBrackets(team.bm_numbrackets)}})</p>
+            </div>
+        </div>
+    </div>
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Brackets</div>
+            <div class="panel-body">
+                <p ng-show="team2.bm_seed">Bracket Matrix Seed: {{team2.bm_seed}}</p>
+                <p ng-show="team2.bm_avgseed">Bracket Matrix Average Seed: {{team2.bm_avgseed}}</p>
+                <p>Bracket Matrix Number of Brackets: {{team2.bm_numbrackets ? team2.bm_numbrackets : 0}} of 121 ({{getBMPercentBrackets(team2.bm_numbrackets)}})</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Schedule</div>
+            <table class="table schedule-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Conference</th>
+                    <th>RPI</th>
+                    <th>Location</th>
+                    <th>Outcome</th>
+                    <th>Quality</th>
+                </tr>
+                <tr ng-repeat="contest in contests" class="{{shadeByOutcomeClass(contest.outcome)}}">
+                    <td>{{contest.date}}</td>
+                    <td><a href="#/teams/{{contest.opponent}}">{{contest.opponent}}</a></td>
+                    <td>{{contest.conference}}</td>
+                    <td>{{contest.rpi}}</td>
+                    <td>{{contest.location}}</td>
+                    <td>{{contest.score}} {{contest.outcome}}</td>
+                    <td><opponentquality contest="contest"></opponentquality></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class = "col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Schedule</div>
+            <table class="table schedule-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Conference</th>
+                    <th>RPI</th>
+                    <th>Location</th>
+                    <th>Outcome</th>
+                    <th>Quality</th>
+                </tr>
+                <tr ng-repeat="contest2 in contests2" class="{{shadeByOutcomeClass(contest2.outcome)}}">
+                    <td>{{contest2.date}}</td>
+                    <td><a href="#/teams/{{contest.opponent}}">{{contest2.opponent}}</a></td>
+                    <td>{{contest2.conference}}</td>
+                    <td>{{contest2.rpi}}</td>
+                    <td>{{contest2.location}}</td>
+                    <td>{{contest2.score}} {{contest2.outcome}}</td>
+                    <td><opponentquality contest="contest2"></opponentquality></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

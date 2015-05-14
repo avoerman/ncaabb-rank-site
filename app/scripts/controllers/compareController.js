@@ -1,25 +1,34 @@
 'use strict';
 
 angular.module('ncaabbRankSiteApp')
-    .controller('teamController', function($scope, $http, $routeParams) {
-        /* For now, we're just going to get the rankings data over again */
+    .controller('compareController', function($scope, $http) {
+        $scope.title = 'Compare Teams';
+
+        $scope.team = null;
+        $scope.team2 = null;
+        $scope.teams = [];
+
         $http.get('data/rankings/alldata.json').success(function(data) {
-            var teams = data.filter(function(fteam) {
-                return fteam.name === $routeParams.name;
-            });
-            var team = teams[0];
-            $scope.team = team;
-            $scope.title = team.name;
-            $scope.subTitle = team.conference;
+            $scope.teams = data;
         });
 
         $http.get('data/schedules/scheduledata.json').success(function(data) {
-            var scheduleTeams = data.filter(function(fteam) {
-                return fteam.name === $routeParams.name;
+            $scope.scheduleData = data;
+        });
+
+        $scope.compareTeamChange = function(team, bindTo) {
+            var scheduleTeams = $scope.scheduleData.filter(function(fteam) {
+                return fteam.name === team.name;
             });
 
-            $scope.contests = scheduleTeams[0].schedule;
-        });
+            var scheduleData = scheduleTeams[0].schedule;
+
+            if (bindTo === 1) {
+                $scope.contests = scheduleData;
+            } else {
+                $scope.contests2 = scheduleData;
+            }
+        };
 
         $scope.getBMPercentBrackets = function(totalBrackets) {
             var percentage = 0;

@@ -2,6 +2,7 @@
 
 angular.module('ncaabbRankSiteApp')
     .controller('rankingsController', function($scope, $http) {
+        $scope.title = 'NCAA Rankings';
 
         $http.get('data/rankings/alldata.json').success(function(data) {
             $scope.teams = data;
@@ -17,7 +18,44 @@ angular.module('ncaabbRankSiteApp')
             };
         });
 
-        $scope.headers = getHeaders();
+        $scope.headers = [{
+            title: 'Team',
+            value: 'name'
+        }, {
+            title: 'Conference',
+            value: 'conference'
+        }, {
+            title: 'Record',
+            value: 'record'
+        }, {
+            title: 'RPI',
+            value: 'rpi'
+        }, {
+            title: 'BPI',
+            value: 'bpi'
+        }, {
+            title: 'KPm',
+            value: 'kpom'
+        }, {
+            title: 'Mas',
+            value: 'massey'
+        }, {
+            title: 'AP',
+            value: 'aprank'
+        }, {
+            title: 'Coaches',
+            value: 'coachesRank'
+        }, {
+            title: 'Seed',
+            value: 'bm_seed'
+        }, {
+            title: 'Avg',
+            value: 'bm_avgseed'
+        }, {
+            title: '# Brackets',
+            value: 'bm_numbrackets',
+            reverseSortByDefault: true
+        }];
 
         $scope.conferenceFilter = function(team) {
             if (!$scope.filterTeam || team.conference === $scope.filterTeam.conference.name) {
@@ -80,47 +118,6 @@ angular.module('ncaabbRankSiteApp')
                 receivedVotes: (rank > 25)
             };
         };
-
-        function getHeaders() {
-            return [{
-                title: 'Team',
-                value: 'name'
-            }, {
-                title: 'Conference',
-                value: 'conference'
-            }, {
-                title: 'Record',
-                value: 'record'
-            }, {
-                title: 'RPI',
-                value: 'rpi'
-            }, {
-                title: 'BPI',
-                value: 'bpi'
-            }, {
-                title: 'KPm',
-                value: 'kpom'
-            }, {
-                title: 'Mas',
-                value: 'massey'
-            }, {
-                title: 'AP',
-                value: 'aprank'
-            }, {
-                title: 'Coaches',
-                value: 'coachesRank'
-            }, {
-                title: 'Seed',
-                value: 'bm_seed'
-            }, {
-                title: 'Avg',
-                value: 'bm_avgseed'
-            }, {
-                title: '# Brackets',
-                value: 'bm_numbrackets',
-                reverseSortByDefault: true
-            }];
-        }
     })
     .filter('nullsLast', function() {
         return function(array, key) {
